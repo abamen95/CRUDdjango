@@ -7,17 +7,19 @@
 {% endblock %}
 
 {% block content %}
-    <div>
+    <div class="lista-productos">
         {% for producto in productos %}
-            <div>
+            <div class="tarjeta-producto">
                 {% if producto.imagen %}
                 <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
                 {% endif %}
                 <h2>{{ producto.nombre }}</h2>
                 <p>{{ producto.descripcion|truncatechars:100 }}...</p>
-                <p>${{ producto.precio }}</p>
-                <button>Comprar</button>
-                <a href="{% url 'detalle' producto.id %}"><button>Detalles</button></a>
+                <p class="precio">${{ producto.precio }}</p>
+                <div class="grupo-botones">
+                    <button class="boton">Comprar</button>
+                    <a href="{% url 'detalle' producto.id %}"><button class="boton">Detalles</button></a>
+                </div>   
             </div>
         {% endfor %}
     </div>

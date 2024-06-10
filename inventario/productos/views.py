@@ -1,9 +1,10 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, get_object_or_404
 from .models import Producto
 
+from .models import Producto
 # Create your views here.
 
-def holaMundo(request): 
+def holaMundo(request):
     return HttpResponse("Hola Mundo ADSO")
 
 def inicio(request):
